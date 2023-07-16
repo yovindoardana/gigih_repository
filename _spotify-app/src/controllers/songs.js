@@ -28,7 +28,7 @@ const addSongHandler = (req, res) => {
     return res.status(400).json({status: 'error', message: 'Please provide all required fields'});
   }
 
-  const songExists = songs.some((song) => song.id === id);
+  const songExists = songs.some((song) => song.id == id);
 
   if (songExists) {
     return res.status(400).json({status: 'error', message: 'Song already exists'});
