@@ -12,6 +12,7 @@ app.use(logMiddleware);
 
 app.use('/songs', songsRoute);
 app.use('/playlist', playlistRoute);
+// app.use('/artist', artistRoute);
 
 app.get('/', (req, res) => {
   res.status(200).send('Spotify App is Ready');
