@@ -61,6 +61,7 @@ const playSongHandler = (req, res) => {
   if (isSongInPlaylist) {
     isSongInPlaylist.totalPlay += 1;
   } else {
+    song.totalPlay = 1;
     playlistModel.addSongtoPlaylist(song);
   }
 
