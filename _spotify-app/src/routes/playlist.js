@@ -5,8 +5,7 @@ const PlaylistController = require('../controllers/playlist');
 
 router.get('/', PlaylistController.getPlaylist);
 router.get('/sorted', PlaylistController.getPlaylistSorted);
-// router.post('/', UserController.addSongHandler);
-// router.get('/:id', UserController.getSongById);
-// router.get('/:id/play', UserController.playSongHandler);
+router.post('/', PlaylistController.addSongtoPlaylist);
+router.delete('/', PlaylistController.deleteSongFromPlaylist);
 
 module.exports = router;
