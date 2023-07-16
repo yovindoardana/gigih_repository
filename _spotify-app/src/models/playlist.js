@@ -1,6 +1,9 @@
 const playlist = require('../database/playlist');
 
 const getPlaylist = () => playlist;
+
+const getPlaylistById = (id) => playlist.find((song) => song.id == id);
+
 const addSongtoPlaylist = (song) => {
   const {id, title, artists, url, totalPlay} = song;
   playlist.push({id, title, artists, url, totalPlay});
@@ -14,5 +17,6 @@ const deleteSongFromPlaylist = (songId) => {
 module.exports = {
   getPlaylist,
   addSongtoPlaylist,
-  deleteSongFromPlaylist
+  deleteSongFromPlaylist,
+  getPlaylistById
 };
