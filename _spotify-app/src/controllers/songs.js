@@ -4,12 +4,12 @@ const songsModel = require('../models/songs');
 const playlistModel = require('../models/playlist');
 
 // GET ALL SONGS HANDLER
-const getAllSongs = (req, res) => {
+const getAllSongsHandler = (req, res) => {
   res.status(200).json({status: 'success', data: {songs: songsModel.getAllSongs()}});
 };
 
 // GET SONG BY ID HANDLER
-const getSongById = (req, res) => {
+const getSongByIdHandler = (req, res) => {
   const songId = req.params.id;
   const song = songsModel.getSongById(songId);
 
@@ -56,7 +56,7 @@ const playSongHandler = (req, res) => {
   }
 
   const playlist = playlistModel.getPlaylist();
-  const isSongInPlaylist = playlist.some((song) => song.id == songId);
+  const isSongInPlaylist = playlist.find((song) => song.id == songId);
 
   if (isSongInPlaylist) {
     isSongInPlaylist.totalPlay += 1;
@@ -100,4 +100,4 @@ const updateSongHandler = (req, res) => {
   res.status(200).json({status: 'success', message: 'Song updated'});
 };
 
-module.exports = {getAllSongs, getSongById, addSongHandler, playSongHandler, deleteSongHandler, updateSongHandler};
+module.exports = {getAllSongsHandler, getSongByIdHandler, addSongHandler, playSongHandler, deleteSongHandler, updateSongHandler};
