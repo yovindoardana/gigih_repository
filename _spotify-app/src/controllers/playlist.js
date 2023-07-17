@@ -35,7 +35,7 @@ const addSongtoPlaylist = (req, res) => {
     return res.status(404).json({status: 'error', message: 'Song not found'});
   }
 
-  playlistModel.addSongtoPlaylist({id, title, artists, url, totalPlay: 0});
+  playlistModel.addSongtoPlaylist({...isSongExists, totalPlay: 0});
 
   return res.status(200).json({status: 'success', message: 'Song added to playlist'});
 };
