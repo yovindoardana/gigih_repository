@@ -1,0 +1,19 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer components {
+  .article {
+    @apply min-h-screen bg-slate-700;
+  }
+  .button {
+    @apply rounded-b-lg shadow-md px-4 py-2 bg-blue-500 hover:bg-blue-300;
+  }
+}
+
+/* primary: #1ed760 */
+/* hover: #1fdf64 */
+/* base: #000000 */
+/* base-2: #121212 */
+/* base-3: gradient top-bottom #161616 - #181818 */
+/* second-accent: #a7a7a7 */
