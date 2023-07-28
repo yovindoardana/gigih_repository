@@ -51,6 +51,18 @@
   aside nav ul li.active {
     @apply text-white;
   }
+
+  .text-blue {
+    @apply text-blue-500;
+  }
+
+  .text-pink {
+    @apply text-pink-500;
+  }
+
+  main {
+    @apply bg-[#121212] p-5;
+  }
 }
 
 /* primary: #1ed760 */
