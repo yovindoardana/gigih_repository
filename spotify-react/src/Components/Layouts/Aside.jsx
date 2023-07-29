@@ -1,5 +1,6 @@
 import React from 'react';
 import UnorderedList from '../Fragments/UnorderedList';
+import Library from './../Fragments/Library';
 
 const Aside = () => {
   return (
@@ -11,6 +12,7 @@ const Aside = () => {
       <nav>
         <UnorderedList />
       </nav>
+      <Library />
     </aside>
   );
 };

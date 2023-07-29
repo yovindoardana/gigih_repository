@@ -17,7 +17,7 @@
   }
 
   aside {
-    @apply py-5 px-5 text-white font-semibold flex flex-col min-h-screen;
+    @apply p-2 text-white font-semibold flex flex-col min-h-screen w-[25vw];
   }
 
   aside .logo {
@@ -52,16 +52,48 @@
     @apply text-white;
   }
 
-  .text-blue {
-    @apply text-blue-500;
+  .library {
+    @apply bg-[#121212] p-5;
   }
 
-  .text-pink {
-    @apply text-pink-500;
+  .library-title-container {
+    @apply flex justify-between;
+  }
+
+  .library-title {
+    @apply flex;
+  }
+
+  .library-icon {
+    @apply text-[#a7a7a7] me-4;
+  }
+
+  .library-item {
+    @apply flex align-middle;
+  }
+
+  .library-item-img {
+    @apply w-20 h-20;
+  }
+
+  .library-item-img img {
+    @apply object-fill;
   }
 
   main {
-    @apply bg-[#121212] p-5;
+    @apply p-2 w-[75%];
+  }
+
+  .container {
+    @apply bg-[#121212] rounded-lg;
+  }
+
+  .top-container {
+    @apply flex justify-between;
+  }
+
+  .button {
+    @apply px-4 py-2 rounded-lg;
   }
 }
 
