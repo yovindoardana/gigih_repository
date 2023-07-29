@@ -1,0 +1,73 @@
+@font-face {
+  font-family: 'Spotify';
+  src: url('/assets/fonts/spotify/GothamMedium.ttf');
+}
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  /* font-family: ; */
+}
+
+@layer components {
+  body {
+    @apply font-spotify bg-black;
+  }
+
+  aside {
+    @apply py-5 px-5 text-white font-semibold flex flex-col min-h-screen;
+  }
+
+  aside .logo {
+    @apply text-3xl flex items-center bg-[#121212] px-16 py-4 rounded-lg;
+  }
+
+  aside .logo img {
+    @apply w-10;
+  }
+
+  aside nav {
+    @apply my-2 py-10 bg-[#121212] rounded-lg px-4;
+  }
+
+  aside nav ul {
+    @apply flex flex-col gap-1;
+  }
+
+  aside nav ul li {
+    @apply py-3 px-4 rounded-lg text-[#a7a7a7];
+  }
+
+  aside nav ul li:hover {
+    @apply text-white;
+  }
+
+  aside nav ul li a {
+    @apply flex gap-2;
+  }
+
+  aside nav ul li.active {
+    @apply text-white;
+  }
+
+  .text-blue {
+    @apply text-blue-500;
+  }
+
+  .text-pink {
+    @apply text-pink-500;
+  }
+
+  main {
+    @apply bg-[#121212] p-5;
+  }
+}
+
+/* primary: #1ed760 */
+/* hover: #1fdf64 */
+/* base: #000000 */
+/* base-2: #121212 */
+/* base-3: gradient top-bottom #161616 - #181818 */
+/* second-accent: #a7a7a7 */
