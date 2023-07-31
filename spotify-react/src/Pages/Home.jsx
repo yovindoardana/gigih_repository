@@ -1,6 +1,5 @@
 import React from 'react';
 import Aside from '../Components/Layouts/Aside';
-import Try from '../Components/Elements/Try';
 import Main from '../Components/Layouts/Main';
 
 const Home = () => {

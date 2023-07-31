@@ -7,7 +7,7 @@ const Library = () => {
       <div className='library-top'>
         <div className='library-title-container'>
           <a className='library-title' href=''>
-            <i class='ri-stack-line library-icon'></i>Your Library
+            <i className='ri-stack-line library-icon'></i>Your Library
           </a>
           <i className='ri-add-line '></i>
         </div>
