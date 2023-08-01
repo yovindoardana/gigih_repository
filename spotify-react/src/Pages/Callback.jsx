@@ -1,12 +1,13 @@
-import React, {useEffect} from 'react';
-import {Navigate} from 'react-router-dom';
+import React, {useEffect, useState} from 'react';
 
 const Callback = () => {
+  const {dataProfile, setDataProfile} = useState();
   useEffect(() => {
+    const clientId = import.meta.env.VITE_CLIENT_ID;
+    const redirectUri = 'http://localhost:5173/callback';
+
     const urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('code');
-    const clientId = '0a48a347940e4a3da62315585d0399d5';
-    const redirectUri = 'http://localhost:5173/callback';
 
     let codeVerifier = localStorage.getItem('code_verifier');
 
@@ -34,7 +35,8 @@ const Callback = () => {
 
         const data = await response.json();
         localStorage.setItem('access_token', data.access_token);
-        getProfile(data.access_token); // Fetch user profile after getting the access token
+        // getProfile(data.access_token);
+        getArtists(data.access_token);
       } catch (error) {
         console.error('Error:', error);
       }
@@ -56,12 +58,31 @@ const Callback = () => {
       }
 
       const data = await response.json();
+      await setDataProfile(data);
       console.log('User Profile:', data);
     } catch (error) {
       console.error('Error:', error);
     }
   }
-  <Navigate to='/dashboard' replace={true} />;
+
+  async function getArtists(accessToken) {
+    try {
+      const response = await fetch('https://api.spotify.com/v1/artists/4Z8W4fKeB5YxbusRsdQVPb', {
+        headers: {
+          Authorization: 'Bearer ' + accessToken
+        }
+      });
+
+      if (!response.ok) {
+        throw new Error('HTTP status ' + response.status);
+      }
+
+      const data = await response.json();
+      console.log('Artists:', data);
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  }
 };
 
 export default Callback;
