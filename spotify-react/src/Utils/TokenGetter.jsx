@@ -1,11 +1,10 @@
 import React, {useEffect, useState} from 'react';
-import TokenGetter from './../Utils/TokenGetter.jsx';
-import ProfileGetter from './../Utils/ProfileGetter.jsx';
-import ArtistsGetter from './../Utils/ArtistsGetter.jsx';
 
-const Callback = () => {
+const TokenGetter = () => {
+  const [accessToken, setAccessToken] = useState(null);
+
   useEffect(() => {
-    const clientId = import.meta.env.VITE_CLIENT_ID;
+    const clientId = '0a48a347940e4a3da62315585d0399d5';
     const redirectUri = 'http://localhost:5173/callback';
 
     const urlParams = new URLSearchParams(window.location.search);
@@ -37,8 +36,7 @@ const Callback = () => {
 
         const data = await response.json();
         localStorage.setItem('access_token', data.access_token);
-        // getProfile(data.access_token);
-        getArtists(data.access_token);
+        setAccessToken(data.access_token);
       } catch (error) {
         console.error('Error:', error);
       }
@@ -47,15 +45,10 @@ const Callback = () => {
     getToken();
   }, []);
 
-  return (
-    <div>
-      <h1>Callback Component</h1>
-      <TokenGetter />
-      {/* <ProfileGetter /> */}
-      {/* <ArtistsGetter /> */}
-      {/* </TokenGetter> */}
-    </div>
-  );
+  const isiToken = localStorage.getItem('access_token');
+
+  // return <>{children}</>;
+  return <h1>{isiToken}</h1>;
 };
 
-export default Callback;
+export default TokenGetter;

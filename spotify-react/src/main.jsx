@@ -6,6 +6,7 @@ import 'remixicon/fonts/remixicon.css';
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Callback from './Pages/Callback';
 import Dashboard from './Pages/Dashboard';
+import LoginWithSpotify from './Pages/LoginWithSpotify';
 
 const router = createBrowserRouter([
   {
@@ -15,6 +16,10 @@ const router = createBrowserRouter([
   {
     path: '/dashboard',
     element: <Dashboard />
+  },
+  {
+    path: '/loginWithSpotify',
+    element: <LoginWithSpotify />
   },
   {
     path: '/callback',

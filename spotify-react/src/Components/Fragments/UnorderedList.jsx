@@ -3,9 +3,9 @@ import List from '../Elements/List';
 
 const UnorderedList = () => {
   return (
-    <ul>
-      <List isActive={true} title='Home' icon='ri-home-line' href='#' />
-      <List isActive={false} title='Search' icon='ri-search-line' href='#' />
+    <ul className='flex flex-col gap-1'>
+      <List title='Home' icon='ri-home-line' href='#' />
+      <List title='Search' icon='ri-search-line' href='#' />
     </ul>
   );
 };
