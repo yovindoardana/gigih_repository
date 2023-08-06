@@ -5,7 +5,7 @@ const TokenGetter = () => {
 
   useEffect(() => {
     const clientId = '0a48a347940e4a3da62315585d0399d5';
-    const redirectUri = 'http://localhost:5173/callback';
+    const redirectUri = 'http://localhost:5173/verify';
 
     const urlParams = new URLSearchParams(window.location.search);
     let code = urlParams.get('code');

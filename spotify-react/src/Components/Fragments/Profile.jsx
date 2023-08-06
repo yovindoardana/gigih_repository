@@ -31,9 +31,6 @@ const Profile = () => {
     <div>
       <h1 className='text-white'>{userData.display_name}</h1>
       <img src={userData.images[1].url} alt='' />
-      {/* {userData.images.map((image) => (
-        <img key={image.url} src={image.url} alt='' />
-      ))} */}
     </div>
   );
 };

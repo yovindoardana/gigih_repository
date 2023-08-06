@@ -5,7 +5,7 @@ import GenerateRandomString from '../Utils/GenerateRandomString';
 const LoginWithSpotify = () => {
   const handleLogin = () => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
-    const redirectUri = 'http://localhost:5173/callback';
+    const redirectUri = 'http://localhost:5173/verify';
 
     let codeVerifier = GenerateRandomString(128);
 

@@ -26,7 +26,7 @@ const Main = () => {
           </div>
         </div>
       </div>
-      <Profile />
+      {/* <Profile /> */}
       <Recommendation />
     </main>
   );
