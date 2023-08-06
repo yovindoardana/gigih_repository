@@ -1,6 +1,7 @@
 import React, {useEffect} from 'react';
 
-const ArtistsGetter = ({accessToken}) => {
+const ArtistsGetter = (props) => {
+  const {accessToken} = props;
   useEffect(() => {
     async function getArtists() {
       try {

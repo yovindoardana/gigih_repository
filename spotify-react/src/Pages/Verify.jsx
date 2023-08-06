@@ -1,8 +1,7 @@
-import React, {useEffect} from 'react';
-import Aside from '../Components/Layouts/Aside';
-import Main from '../Components/Layouts/Main';
+import React, {useEffect, useState} from 'react';
+import {Link} from 'react-router-dom';
 
-const Home = () => {
+const Verify = () => {
   useEffect(() => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
     const redirectUri = 'http://localhost:5173/verify';
@@ -45,11 +44,15 @@ const Home = () => {
   }, []);
 
   return (
-    <div className='flex'>
-      <Aside />
-      <Main />
+    <div className='flex w-100 h-[100vh] text-white'>
+      <div className='flex m-auto flex-col gap-10 bg-slate-800 px-8 py-6 rounded-md'>
+        <h1 className='text-3xl'>Login Success✅ </h1>
+        <Link className='flex px-3 py-2 bg-slate-600 mx-auto rounded-md' to='/'>
+          Back to Home
+        </Link>
+      </div>
     </div>
   );
 };
 
-export default Home;
+export default Verify;

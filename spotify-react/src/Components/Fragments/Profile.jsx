@@ -27,10 +27,14 @@ const Profile = () => {
     fetchData();
   }, []);
 
+  if (!userData.display_name) {
+    return null;
+  }
+
   return (
-    <div>
-      <h1 className='text-white'>{userData.display_name}</h1>
-      <img src={userData.images[1].url} alt='' />
+    <div className='flex align-middle gap-4 px-10'>
+      <img className='rounded-full' src={userData.images[0].url} alt='' />
+      <h1 className='text-white my-auto'>{userData.display_name}</h1>
     </div>
   );
 };

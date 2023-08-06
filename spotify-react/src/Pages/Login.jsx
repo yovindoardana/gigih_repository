@@ -2,7 +2,7 @@ import React from 'react';
 import GenerateCodeChallenge from '../Utils/GenerateCodeChallenge';
 import GenerateRandomString from '../Utils/GenerateRandomString';
 
-const LoginWithSpotify = () => {
+const Login = () => {
   const handleLogin = () => {
     const clientId = import.meta.env.VITE_CLIENT_ID;
     const redirectUri = 'http://localhost:5173/verify';
@@ -30,10 +30,18 @@ const LoginWithSpotify = () => {
   };
 
   return (
-    <button className='px-4 py-2 rounded-lg text-white' onClick={handleLogin}>
-      Login with Spotify
-    </button>
+    <div className='w-100 h-[100vh] flex text-white'>
+      <div className='flex flex-col m-auto bg-slate-800 py-3 px-5 rounded-lg gap-10'>
+        <div className='flex align-middle my-4'>
+          <img className='w-14' src='/spotify.svg' alt='' />
+          <h1 className='text-3xl my-auto'>Spotifuck</h1>
+        </div>
+        <button className='bg-slate-400 px-4 py-2 rounded-lg mx-auto my-4' onClick={handleLogin}>
+          Login with Spotify
+        </button>
+      </div>
+    </div>
   );
 };
 
-export default LoginWithSpotify;
+export default Login;

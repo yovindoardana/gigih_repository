@@ -1,6 +1,4 @@
 import React, {useEffect, useState} from 'react';
-// import SongItem from './../Fragments/SongItem';
-// import Songs from './../../Data/Songs';
 import axios from 'axios';
 import RecommendationItem from '../Elements/RecommendationItem';
 

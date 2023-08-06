@@ -1,7 +1,7 @@
 import {createBrowserRouter, RouterProvider} from 'react-router-dom';
 import Home from './Pages/Home';
-import Dashboard from './Pages/Dashboard';
-import LoginWithSpotify from './Pages/LoginWithSpotify';
+import Login from './Pages/Login';
+import Verify from './Pages/Verify';
 
 function App() {
   const router = createBrowserRouter([
@@ -10,16 +10,12 @@ function App() {
       element: <Home />
     },
     {
-      path: '/dashboard',
-      element: <Dashboard />
-    },
-    {
-      path: '/loginWithSpotify',
-      element: <LoginWithSpotify />
+      path: '/login',
+      element: <Login />
     },
     {
       path: '/verify',
-      element: <Home />
+      element: <Verify />
     }
   ]);
 
