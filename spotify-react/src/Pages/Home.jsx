@@ -45,7 +45,7 @@ const Home = () => {
   }, []);
 
   useEffect(() => {
-    window.location = 'http://localhost:5173/';
+    // window.location = 'http://localhost:5173/';
   }, []);
 
   return (
